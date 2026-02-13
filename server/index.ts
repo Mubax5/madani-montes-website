@@ -6,6 +6,18 @@ import { createServer } from "http";
 const app = express();
 const httpServer = createServer(app);
 
+app.set("trust proxy", 1);
+
+app.use((req, res, next) => {
+  const host = (req.headers.host || "").toLowerCase();
+
+  if (host === "madanimontessori.online") {
+    return res.redirect(301, "https://www.madanimontessori.online" + req.originalUrl);
+  }
+
+  next();
+});
+
 declare module "http" {
   interface IncomingMessage {
     rawBody: unknown;
