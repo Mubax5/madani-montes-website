@@ -2,19 +2,9 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { serveStatic } from "./static";
 import { createServer } from "http";
-import path from "path";
 
 const app = express();
 const httpServer = createServer(app);
-
-const clientDist = path.resolve(process.cwd(), "client", "dist");
-
-app.use(express.static(clientDist));
-app.use("/assets", express.static(path.join(clientDist, "assets")));
-
-app.get("/.*", (req, res) => {
-  res.sendFile(path.join(clientDist, "index.html"));
-});
 
 app.set("trust proxy", 1);
 
