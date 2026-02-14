@@ -10,10 +10,9 @@ const httpServer = createServer(app);
 const clientDist = path.resolve(process.cwd(), "client", "dist");
 
 app.use(express.static(clientDist));
-
 app.use("/assets", express.static(path.join(clientDist, "assets")));
 
-app.get("*", (req, res) => {
+app.get("/*", (req, res) => {
   res.sendFile(path.join(clientDist, "index.html"));
 });
 
