@@ -9,6 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "@/assets/logo.png";
 
 const WA_NUMBER = "6282123576275";
 const WA_LINK = `https://wa.me/${WA_NUMBER}`;
@@ -41,7 +42,7 @@ export function Navbar() {
           <Link href="/" className="flex items-center gap-2 group cursor-pointer">
             <div className="w-10 h-10 rounded-xl overflow-hidden shadow-lg group-hover:scale-105 transition-transform bg-white p-1">
               <img
-                src="/favicon.png"
+                src={logo}
                 alt="Madani Montessori Islamic School"
                 className="w-full h-full object-contain"
               />
