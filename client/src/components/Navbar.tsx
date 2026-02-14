@@ -9,7 +9,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/assets/logo.png";
 
 const WA_NUMBER = "6282123576275";
 const WA_LINK = `https://wa.me/${WA_NUMBER}`;
@@ -40,14 +39,9 @@ export function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group cursor-pointer">
-            <div className="w-10 h-10 rounded-xl overflow-hidden shadow-lg group-hover:scale-105 transition-transform bg-white p-1">
-              <img
-                src={logo}
-                alt="Madani Montessori Islamic School"
-                className="w-full h-full object-contain"
-              />
+            <div className="w-10 h-10 bg-gradient-to-br from-primary to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+              <span className="text-white font-display font-bold text-xl">M</span>
             </div>
-
             <div className="flex flex-col">
               <span className="font-display font-bold text-primary text-lg leading-tight group-hover:text-purple-700 transition-colors">
                 Madani Montessori
